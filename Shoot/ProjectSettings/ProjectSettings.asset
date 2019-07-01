@@ -634,7 +634,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: a68f553c-fa4e-4f9c-b284-f61efda87db0
-  projectName: Shoot (1)
+  projectName: Battle_Shoot
   organizationId: nvbrostduio
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
