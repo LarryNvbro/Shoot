@@ -1,2 +1,5 @@
 Shoot/Library/
 Shoot/Assets/Resources/2D_Shooter/
+Shoot/Temp/
+*.sln
+*.csproj
