@@ -6,15 +6,3 @@ public class PrefsDefine
 {
     public const string GameVersion = "GameVersion"; // public save
 }
-
-public enum ItemType
-{
-    AddBall = 1,
-    Missile,
-    AddBar,
-    LongBar,
-    ShortBar,
-    BallSpeedUp,
-    BallSpeedDown,
-    SplitBall,
-}
