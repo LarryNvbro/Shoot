@@ -36,8 +36,10 @@ public class GameManager : StateMachineBase
     #endregion
 
     public GameUI ui;
-    public PlayerControl player;
     private int score = 0;
+    
+    public PlayerControl player;
+    public RespawnManager respawn;
 
     private void Start()
     {
@@ -46,19 +48,27 @@ public class GameManager : StateMachineBase
 
     private void Init()
     {
-        score = 0;
-        ui.SetScore(score);
         CurrentState = States.IntroState;
     }
 
     private IEnumerator IntroStateEnter()
     {
+        score = 0;
+        ui.SetScore(score);
+        ui.SetGameOver(false);
+
+        player.Init();
+        player.ActiveFire(true);
+
+        respawn.ActiveRespawn(true);
+
         CurrentState = States.GamePlayState;
         yield return null;
     }
 
     private IEnumerator GamePlayStateEnter()
     {
+
         bool isTouched = false;
         Vector2 prevTouch = Vector2.zero;
         while (true)
@@ -75,7 +85,7 @@ public class GameManager : StateMachineBase
                 prevTouch = Util.GetMousePosition();
             }
 
-            if(Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 isTouched = false;
             }
@@ -95,7 +105,19 @@ public class GameManager : StateMachineBase
 
     private IEnumerator GameEndStateEnter()
     {
-        yield return null;
+        ui.SetGameOver(true);
+        respawn.ActiveRespawn(false);
+        player.ActiveFire(false);
+        while (true)
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                CurrentState = States.IntroState;
+                break;
+            }
+            yield return null;
+        }
+
     }
 
     public void AddScore(int score)
@@ -103,4 +125,10 @@ public class GameManager : StateMachineBase
         this.score += score;
         ui.SetScore(this.score);
     }
+
+    public void SetWave(int wave)
+    {
+        ui.SetWave(wave);
+    }
+
 }

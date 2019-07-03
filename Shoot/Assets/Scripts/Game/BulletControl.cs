@@ -6,6 +6,9 @@ public class BulletControl : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Destroyer"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

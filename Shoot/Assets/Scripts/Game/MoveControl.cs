@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MoveControl : MonoBehaviour
 {
-
     public Transform tr;
     public float speed;
 

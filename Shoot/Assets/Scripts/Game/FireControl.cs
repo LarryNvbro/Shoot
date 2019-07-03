@@ -15,16 +15,36 @@ public class FireControl : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Fire", 1.0f, delayTime);
+        //InvokeRepeating("Fire", 0.5f, delayTime);
+        ActiveFire(true);
     }
 
-    void Update()
+    public void ActiveFire(bool isFire)
     {
-        //Fire();
+        if (isFire)
+            StartCoroutine("FireRealTime");
+        else
+            StopCoroutine("FireRealTime");
+    }
+
+    private IEnumerator FireRealTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+        while (true)
+        {
+            audioSource.PlayOneShot(soundFx, soundPitch);
+
+            for (int i = 0; i < pos.Length; i++)
+            {
+                Instantiate(bullet, pos[i].transform.position, pos[i].transform.rotation);
+            }
+            yield return new WaitForSeconds(delayTime);
+        }
     }
 
     private void Fire()
     {
+
         audioSource.PlayOneShot(soundFx, soundPitch);
 
         for (int i = 0; i < pos.Length; i++)

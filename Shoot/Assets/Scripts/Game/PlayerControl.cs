@@ -18,6 +18,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         hp = initHp;
     }
     
@@ -27,6 +32,11 @@ public class PlayerControl : MonoBehaviour
         pos.x += diffX;
         transform.position = pos;
         FixedPos();
+    }
+
+    public void ActiveFire(bool isFire)
+    {
+        GetComponent<FireControl>().ActiveFire(isFire);
     }
 
     private void FixedPos()
@@ -62,7 +72,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy"))
+        if(collision.CompareTag("Bullet"))
         {
             --hp;
             if(hp <= 0)
