@@ -72,12 +72,12 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Bullet"))
+        if(collision.CompareTag("Enemy"))
         {
             --hp;
             if(hp <= 0)
             {
-                //Debug.Log("PlayerDie");
+                Debug.Log("PlayerDie");
             }
         }
     }

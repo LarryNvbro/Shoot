@@ -68,7 +68,6 @@ public class GameManager : StateMachineBase
 
     private IEnumerator GamePlayStateEnter()
     {
-
         bool isTouched = false;
         Vector2 prevTouch = Vector2.zero;
         while (true)

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Destroyer
+  - Coin
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

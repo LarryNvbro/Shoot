@@ -56,7 +56,7 @@ MonoBehaviour:
   speed: 0.5
   tr: {fileID: 4297670295814298}
   effect: {fileID: 1993636850184634, guid: 0d530098e14614547a524ca3b41641b2, type: 3}
-  coin: {fileID: 1156289363383932, guid: 67f6560c95b3fad4c9ac9d1cbc5a35c3, type: 3}
+  coin: {fileID: 382951882536947908, guid: 90aea538598f4c3449b4b1be4da44ec8, type: 3}
 --- !u!114 &114571228671654168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,20 +66,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260658663928832}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e98845310375334e8c95186adf8d457, type: 3}
+  m_Script: {fileID: 11500000, guid: 425c22b56e60e794694d6b6854670d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilt: 10
-  dodge: 2.5
-  smoothing: 7.5
   boundary:
-    xMin: -2.8
-    xMax: 2.8
-    yMin: -10
-    yMax: 5.2
-  startWait: {x: 1, y: 1.5}
-  maneuverTime: {x: 1, y: 2}
-  maneuverWait: {x: 1, y: 2}
+    xMin: 0
+    xMax: 0
+    yMin: 0
+    yMax: 0
+  tilt: 0
+  dodge: 0
+  smoothing: 0
+  startWait: {x: 0, y: 0}
+  maneuverTime: {x: 0, y: 0}
+  maneuverWait: {x: 0, y: 0}
 --- !u!114 &114649565915830574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300046, guid: bf3bdd2147b394bc2b771f2556f0b49d, type: 3}
+  m_Sprite: {fileID: 21300008, guid: bf3bdd2147b394bc2b771f2556f0b49d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
