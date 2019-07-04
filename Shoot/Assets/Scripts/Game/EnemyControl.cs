@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyControl : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyControl : MonoBehaviour
     public Transform tr;
     public GameObject effect;
     public GameObject coin;
+    public Slider hpGauge;
 
     public void SetDestination(Vector3 pos)
     {
@@ -34,6 +36,7 @@ public class EnemyControl : MonoBehaviour
         if(collision.CompareTag("PlayerBullet"))
         {
             --hp;
+            hpGauge.value = (float)hp / initHp;
             if(hp == 0)
             {
                 //effect play
