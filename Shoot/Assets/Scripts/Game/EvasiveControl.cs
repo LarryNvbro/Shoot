@@ -42,6 +42,7 @@ public class EvasiveControl : MonoBehaviour
     void FixedUpdate()
     {
         float newManeuver = Mathf.MoveTowards(GetComponent<Rigidbody2D>().velocity.x, targetManeuver, smoothing * Time.deltaTime);
+
         GetComponent<Rigidbody2D>().velocity = new Vector2(newManeuver, currentSpeed);
         GetComponent<Rigidbody2D>().position = new Vector2
         (

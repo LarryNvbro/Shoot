@@ -212,7 +212,7 @@ MonoBehaviour:
   bullet: {fileID: 1991137445440924, guid: 8c87d1f163abacf46959359e6920d621, type: 3}
   pos:
   - {fileID: 5799145661468024183}
-  soundFx: {fileID: 8300000, guid: 1743f0d445b86480b8ecfdbc8c84a5f9, type: 3}
+  soundFx: {fileID: 0}
   audioSource: {fileID: 2251046656310978183}
   soundPitch: 0.3
 --- !u!212 &5948938726924474267

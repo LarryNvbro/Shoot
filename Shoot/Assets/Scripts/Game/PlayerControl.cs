@@ -75,6 +75,7 @@ public class PlayerControl : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             --hp;
+            GameManager.Instance.SetPlayerHp(hp);
             if(hp <= 0)
             {
                 Debug.Log("PlayerDie");

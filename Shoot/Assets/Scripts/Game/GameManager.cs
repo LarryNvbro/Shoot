@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : StateMachineBase
 {
@@ -58,6 +59,7 @@ public class GameManager : StateMachineBase
         ui.SetGameOver(false);
 
         player.Init();
+        SetPlayerHp(player.hp);
         player.ActiveFire(true);
 
         respawn.ActiveRespawn(true);
@@ -128,6 +130,11 @@ public class GameManager : StateMachineBase
     public void SetWave(int wave)
     {
         ui.SetWave(wave);
+    }
+
+    public void SetPlayerHp(int hp)
+    {
+        ui.SetPlayerHp(hp, player.initHp);
     }
 
 }
