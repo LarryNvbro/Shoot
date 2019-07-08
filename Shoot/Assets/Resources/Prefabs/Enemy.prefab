@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4297670295814298}
   - component: {fileID: 114757441845761662}
-  - component: {fileID: 114571228671654168}
   - component: {fileID: 114649565915830574}
   - component: {fileID: 114570343306746682}
   - component: {fileID: 212409630384501418}
@@ -59,29 +58,6 @@ MonoBehaviour:
   effect: {fileID: 1993636850184634, guid: 0d530098e14614547a524ca3b41641b2, type: 3}
   coin: {fileID: 382951882536947908, guid: 90aea538598f4c3449b4b1be4da44ec8, type: 3}
   hpGauge: {fileID: 467210149500245301}
---- !u!114 &114571228671654168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260658663928832}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425c22b56e60e794694d6b6854670d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boundary:
-    xMin: 0
-    xMax: 0
-    yMin: 0
-    yMax: 0
-  tilt: 0
-  dodge: 0
-  smoothing: 0
-  startWait: {x: 0, y: 0}
-  maneuverTime: {x: 0, y: 0}
-  maneuverWait: {x: 0, y: 0}
 --- !u!114 &114649565915830574
 MonoBehaviour:
   m_ObjectHideFlags: 0

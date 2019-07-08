@@ -18,7 +18,7 @@ public class EvasiveControl : MonoBehaviour
     public Vector2 maneuverTime;
     public Vector2 maneuverWait;
 
-    private float currentSpeed = 1;
+    private float currentSpeed = -3;
     private float targetManeuver;
 
     void Start()

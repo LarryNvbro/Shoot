@@ -36,6 +36,7 @@ public class RespawnManager : MonoBehaviour
                 {
                     int prefabIndex = Random.Range(0, enemyPrefabs.Length);
                     GameObject enemy = Instantiate(enemyPrefabs[prefabIndex], respawnTr.position + new Vector3(Random.Range(-range + offset, range - offset), 0, 0), Quaternion.identity);
+                    //enemy.name = string.Format("Enemy{0}", i);
                     //EnemyControl ctrl = enemy.GetComponent<EnemyControl>();
                     //var sizeX = enemy.GetComponent<BoxCollider2D>().size.x / 2;
                     //Vector3 pos = new Vector3(playerTr.position.x + i * sizeX, playerTr.position.y);

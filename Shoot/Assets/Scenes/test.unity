@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaaf26d17ee9f245a980433e3317b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTr: {fileID: 0}
+  playerTr: {fileID: 2039197625}
   enemyPrefabs:
   - {fileID: 1260658663928832, guid: 31fc0a39271c0d64d95667dd1eff77af, type: 3}
   - {fileID: 1260658663928832, guid: 31fc0a39271c0d64d95667dd1eff77af, type: 3}
@@ -1439,6 +1439,12 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!4 &2039197625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4515314558738486, guid: 7d396d324df310a40aaf50330167c380,
+    type: 3}
+  m_PrefabInstance: {fileID: 1126853824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2066900218
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,3 +4,4 @@ Shoot/Temp/
 *.sln
 *.csproj
 Shoot/.vs/
+Shoot/obj/Debug/
