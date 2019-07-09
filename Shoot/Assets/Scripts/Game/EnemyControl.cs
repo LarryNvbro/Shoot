@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class EnemyControl : MonoBehaviour
 {
@@ -10,14 +11,12 @@ public class EnemyControl : MonoBehaviour
     public float speed = 1;
 
     public Transform tr;
+
+    public GameObject damage;
     public GameObject effect;
     public GameObject coin;
-    public Slider hpGauge;
 
-    public void SetDestination(Vector3 pos)
-    {
-        //StartCoroutine(Move(pos));
-    }
+    public Slider hpGauge;
 
     private IEnumerator Move(Vector3 pos)
     {
@@ -31,11 +30,28 @@ public class EnemyControl : MonoBehaviour
         }
     }
 
+    private void ShowDamageFx(int dmg)
+    {
+        GameObject go = Instantiate(damage, tr.position, Quaternion.identity, transform.Find("Canvas"));
+        go.GetComponent<RectTransform>().position = new Vector3(0,0,-1);
+        var tm = go.GetComponent<TextMesh>();
+
+        Sequence sequence = DOTween.Sequence();
+        sequence
+            .Append(DOTween.ToAlpha(() => tm.color, color => tm.color = color, 0.0f, 0.3f))
+            .AppendCallback(()=>
+            {
+                Destroy(go);
+            });
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("PlayerBullet"))
+        if(collision.CompareTag("PlayerBullet") ||
+            collision.CompareTag("Player"))
         {
             --hp;
+            //ShowDamageFx(1);
             hpGauge.value = (float)hp / initHp;
             if(hp == 0)
             {

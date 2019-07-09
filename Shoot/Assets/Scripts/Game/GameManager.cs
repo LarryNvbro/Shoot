@@ -60,9 +60,6 @@ public class GameManager : StateMachineBase
 
         player.Init();
         SetPlayerHp(player.hp);
-        player.ActiveFire(true);
-
-        respawn.ActiveRespawn(true);
 
         CurrentState = States.GamePlayState;
         yield return null;
@@ -70,6 +67,9 @@ public class GameManager : StateMachineBase
 
     private IEnumerator GamePlayStateEnter()
     {
+        respawn.ActiveRespawn(true);
+        player.ActiveFire(true);
+
         bool isTouched = false;
         Vector2 prevTouch = Vector2.zero;
         while (true)

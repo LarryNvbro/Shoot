@@ -156,6 +156,7 @@ MonoBehaviour:
   initHp: 10
   speed: 0.5
   tr: {fileID: 5796983310685922731}
+  damage: {fileID: 726412944391542099, guid: 915a60d955c814547a2c548b7c0a2825, type: 3}
   effect: {fileID: 1993636850184634, guid: 0d530098e14614547a524ca3b41641b2, type: 3}
   coin: {fileID: 382951882536947908, guid: 90aea538598f4c3449b4b1be4da44ec8, type: 3}
   hpGauge: {fileID: 3060570242563277743}

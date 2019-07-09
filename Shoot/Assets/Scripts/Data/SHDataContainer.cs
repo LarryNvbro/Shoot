@@ -17,6 +17,9 @@ public class SHDataContainer
     public List<SHCharacter> Character = new List<SHCharacter>();
     public List<SHEnemy> Enemy = new List<SHEnemy>();
     public List<SHBullet> Bullet = new List<SHBullet>();
+    public List<SHStageInfo> StageInfo = new List<SHStageInfo>();
+    public List<SHStageData> StageData = new List<SHStageData>();
+    public List<SHSpawn> Spawn = new List<SHSpawn>();
 
     public void LoadData<T>(string resourceName, List<T> list) where T : new()
     {
@@ -109,6 +112,9 @@ public class SHDataContainer
         LoadData<SHCharacter>("Character", Character);
         LoadData<SHEnemy>("Enemy", Enemy);
         LoadData<SHBullet>("Bullet", Bullet);
+        LoadData<SHStageInfo>("StageInfo", StageInfo);
+        LoadData<SHStageData>("StageData", StageData);
+        LoadData<SHSpawn>("Spawn", Spawn);
     }
 }
 
@@ -127,7 +133,7 @@ public class SHEnemy
     public int ID;
     public int Hp;
     public int BulletID;
-    public string ResourceName;
+    public int MoveSpeed;
 }
 
 
@@ -136,5 +142,33 @@ public class SHBullet
     public int ID;
     public int Damage;
     public string ResourceName;
+}
+
+
+public class SHStageInfo
+{
+    public int ID;
+    public string Des;
+    public int StageData;
+}
+
+
+public class SHStageData
+{
+    public int ID;
+    public int Group;
+    public int Wave;
+    public int EnemyID;
+    public int SpawnID;
+    public float Delay;
+}
+
+
+public class SHSpawn
+{
+    public int ID;
+    public float PosX;
+    public float PosY;
+    public float PosZ;
 }
 
